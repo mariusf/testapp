@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+
+<!-- 100% Box Grid Container: Start -->
+<div class="grid_24">
+
+	<!-- Box Header: Start -->
+	<div class="box_top">
+		
+		<h2 class="icon pages"><%= @customer.name %></h2>
+		
+		<%= link_to 'Neue Seite', new_page_path, :class => "button right" %>
+		
+	</div>
+	<!-- Box Header: End -->
+	
+	<!-- Box Content: Start -->
+	<div class="box_content">
+	
+		<!-- News Table Tabs: Start -->
+		<div class="tabs">
+		
+			<!-- News Sorting Table: Start -->
+			<div id="listing">
+				
+				<table class="sorting">
+					<thead>
+						<tr>
+							<th class="align_left">Name</th>
+							<th class="align_left center">asdf</th>
+							<th class="align_left center">asdf</th>
+							<th class="align_left center">asdf</th>
+							<th class="align_left center">asdf</th>
+							<th class="align_left center tools">Werkzeuge</th>
+						</tr>
+					</thead>
+					<tbody>
+						
+						<% @customer.pages.each do |page| %>
+						<tr>
+							<td class="align_left"><%= link_to page.title, page %></td>
+							<td class="align_left center">fdsa</td>
+							<td class="align_left center">asdf</td>
+							<td class="align_left center">asdf</td>
+							<td class="align_left center">fdas</td>
+							<td class="align_left tools center">
+							  <%= link_to 'Anzeigen', page, :class => "view tip", :title => "Seite Anzeigen" %>
+							  <%= link_to 'Bearbeiten', edit_page_path(page), :class => "edit tip", :title => "Seite Bearbeiten" %>
+							  <%= link_to 'L&ouml;schen', page, :confirm => 'Diese Seite wirklich loeschen?', :method => :delete, :class => "delete tip", :title => "Seite L&ouml;schen" %>
+							</td>
+						</tr>
+						<% end %>
+						
+					</tbody>
+					
+				</table>
+				
+			</div>
+			<!-- News Sorting Table: End -->
+		
+		</div>
+		<!-- News Table Tabs: End -->
+
+	</div>
+	<!-- Box Content: End -->
+	
+</div>
+<!-- 100% Box Grid Container: End -->

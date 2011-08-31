@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+
+<!-- 100% Box Grid Container: Start -->
+<div class="grid_24">
+
+	<!-- Box Header: Start -->
+	<div class="box_top">
+		
+		<h2 class="icon users">Kunden</h2>
+		
+		<%= link_to 'Neuer Kunde', new_customer_path, :class => "button right" %>
+		
+	</div>
+	<!-- Box Header: End -->
+	
+	<!-- Box Content: Start -->
+	<div class="box_content">
+	
+		<!-- News Table Tabs: Start -->
+		<div class="tabs">
+		
+			<!-- News Sorting Table: Start -->
+			<div id="listing">
+				
+				<table class="sorting">
+					<thead>
+						<tr>
+							<th class="align_left">Name</th>
+							<th class="align_left center">asdf</th>
+							<th class="align_left center">asdf</th>
+							<th class="align_left center">asdf</th>
+							<th class="align_left center">asdf</th>
+							<th class="align_left center tools">Werkzeuge</th>
+						</tr>
+					</thead>
+					<tbody>
+						
+						<% @customers.each do |customer| %>
+						<tr>
+							<td class="align_left"><%= link_to customer.name, customer %></td>
+							<td class="align_left center">fdsa</td>
+							<td class="align_left center">asdf</td>
+							<td class="align_left center">asdf</td>
+							<td class="align_left center">fdas</td>
+							<td class="align_left tools center">
+							  <%= link_to 'Anzeigen', customer, :class => "view tip", :title => "Seiten Anzeigen" %>
+							  <%= link_to 'Bearbeiten', edit_customer_path(customer), :class => "edit tip", :title => "Kunde Bearbeiten" %>
+							  <%= link_to 'L&ouml;schen', customer, :confirm => 'Diesen Kunden wirklich loeschen?', :method => :delete, :class => "delete tip", :title => "Kunde L&ouml;schen" %>
+							</td>
+						</tr>
+						<% end %>
+						
+					</tbody>
+					
+				</table>
+				
+			</div>
+			<!-- News Sorting Table: End -->
+		
+		</div>
+		<!-- News Table Tabs: End -->
+
+	</div>
+	<!-- Box Content: End -->
+	
+</div>
+<!-- 100% Box Grid Container: End -->
