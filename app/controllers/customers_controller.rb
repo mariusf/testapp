@@ -16,6 +16,9 @@ class CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
     
     session[:current_customer] = @customer.id
+    
+    # Breadcrumb as array of hashes [{:url => "", :text => ""}, ...]
+    @breadcrumb = [{:url => customer_path(@customer), :text => @customer.name}]
 
     respond_to do |format|
       format.html # show.html.erb

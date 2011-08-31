@@ -17,7 +17,6 @@
 	<link href="/stylesheets/theme/custom.css" rel="stylesheet" media="screen" type="text/css" />
   
   <%= javascript_include_tag :defaults %>
-  <%= javascript_include_tag "nested_form" %>
   <%= csrf_meta_tag %>
   
   <!-- IE Canvas Fix for Visualize Charts - Added in 1.1 -->
@@ -82,17 +81,7 @@
 		<!-- Header: End -->
 		
 		<!-- Breadcrumb Bar: Start -->
-		<div id="breadcrumb">
-			
-			<!-- Breadcrumb: Start -->
-			<ul class="left">
-				<li class="icon users"><a href="#">Kunden</a></li>
-				<li class="icon point_right"><a href="#">Seiten</a></li>
-				<li class="icon point_right active"><a href="#">Seite 1</a></li>
-			</ul>
-			<!-- Breadcrumb: End -->
-			
-		</div>
+		<%= render 'layouts/breadcrumb' %>
 		<!-- Breadcrumb Bar: End -->
 		
 	</div>

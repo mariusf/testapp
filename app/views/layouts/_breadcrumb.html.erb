@@ -1,0 +1,14 @@
+<div id="breadcrumb">
+	
+	<!-- Breadcrumb: Start -->
+	<ul class="left">
+		<li class="icon users"><%= link_to 'Kunden', customers_path %></li>
+		<% unless @breadcrumb.nil? %>
+		  <% @breadcrumb.each do |breadcrumb| %>
+        <li class="icon point_right"><%= link_to breadcrumb[:text], breadcrumb[:url] %></li>
+      <% end %>
+    <% end %>
+	</ul>
+	<!-- Breadcrumb: End -->
+	
+</div>

@@ -14,6 +14,9 @@ class PagesController < ApplicationController
   # GET /pages/1.xml
   def show
     @page = Page.find(params[:id])
+    
+    @customer = Customer.find(session[:current_customer])
+    @breadcrumb = [{:url => customer_path(@customer), :text => @customer.name}, {:url => page_path(@page), :text => @page.title}]
 
     respond_to do |format|
       format.html # show.html.erb
